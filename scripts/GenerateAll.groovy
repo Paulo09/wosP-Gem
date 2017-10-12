@@ -70,7 +70,8 @@ target(generateAll:"The implementation target") {
 
    if(domainClass) {
 		def generator = new DefaultGrailsTemplateGenerator()
-		generator.setOverwrite(true);	
+		// Foi adicionado para nao perguntar se deseja sobre-escrever as visoes e controles - Paulo Castro	
+		generator.setOverwrite(true); 
 		if(generateViews) {
 			event("StatusUpdate", ["Generating views for domain class ${domainClass.fullName}"])				
 			generator.generateViews(domainClass, basedir)
